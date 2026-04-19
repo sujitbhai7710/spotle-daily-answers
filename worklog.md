@@ -156,3 +156,27 @@ Stage Summary:
 - Auto-deploy workflow: .github/workflows/deploy.yml
 - Static export working with client-side CORS proxy data fetching
 - All 4 tasks completed successfully
+
+---
+Task ID: 8
+Agent: Main Agent
+Task: Fix broken GitHub Pages deployment - missing basePath
+
+Work Log:
+- Investigated why the deployed site looked broken on GitHub Pages
+- Diagnosed root cause: ALL static asset paths (CSS, JS, fonts, images) were 404-ing
+- The page was deployed at sujitbhai7710.github.io/spotle-daily-answers/ but assets referenced /_next/... instead of /spotle-daily-answers/_next/...
+- This is the classic GitHub Pages basePath issue for project pages (not user/org pages)
+- Added `basePath: "/spotle-daily-answers"` to next.config.ts
+- Fixed banner image: next/image with fill mode doesn't apply basePath in static export HTML, changed to plain <img> with explicit basePath
+- Rebuilt project, verified all asset paths now have correct /spotle-daily-answers/ prefix
+- Pushed to GitHub, Actions workflow built and deployed successfully
+- Verified all assets (CSS 2.4KB, JS 195KB, fonts, banner) return HTTP 200
+
+Stage Summary:
+- Root cause: missing basePath in next.config.ts for GitHub Pages project URL
+- Fix: added basePath: "/spotle-daily-answers" to next.config.ts
+- Also fixed: banner image src path (plain img with explicit basePath)
+- Commit: 0ee0741 "Fix GitHub Pages: add basePath and fix banner image path"
+- Verified: all CSS/JS/font/image assets now load correctly with HTTP 200
+- Site: https://sujitbhai7710.github.io/spotle-daily-answers/
