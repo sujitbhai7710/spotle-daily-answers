@@ -39,6 +39,9 @@ import {
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
+// Base path for GitHub Pages deployment (matches next.config.ts basePath)
+const BASE_PATH = "/spotle-daily-answers";
+
 // IST offset from UTC in minutes (+5:30 = 330 minutes)
 const IST_OFFSET_MINUTES = 330;
 
@@ -648,12 +651,11 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-r from-spotle-bg via-spotle-purple/20 to-spotle-bg z-10" />
             <div className="absolute inset-0 bg-gradient-to-t from-spotle-bg via-transparent to-transparent z-10" />
             <div className="relative h-32 sm:h-40 md:h-48 overflow-hidden">
-              <Image
-                src="/spotle-banner.png"
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`${BASE_PATH}/spotle-banner.png`}
                 alt="Spotle banner"
-                fill
-                className="object-cover opacity-40"
-                unoptimized
+                className="object-cover opacity-40 h-full w-full"
               />
             </div>
             <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
