@@ -4,6 +4,7 @@
 // even before their own archive accumulates from daily visits.
 //
 // The archive grows over time as fetchSpotleData() saves new entries to localStorage.
+// Data sourced from spotle.io/__data.json
 
 export interface SeedEntry {
   isoDate: string;
@@ -20,55 +21,55 @@ export const SEED_ARCHIVE: SeedEntry[] = [
     spotleNumber: 1451,
     artist: "The Who",
     track: "Baba O'Riley",
-    image: "https://i.scdn.co/image/ab6761610000e5eb93d10db7e453c841d925d30b",
-    soundcloudUrl: "https://soundcloud.com/the-who/baba-oriley-2",
+    image: "https://i.scdn.co/image/ab67616d0000b273fe24dcd263c08c6dd84b6e8c",
+    soundcloudUrl: "https://soundcloud.com/thewho/baba-oriley-original-album",
   },
   {
     isoDate: "2026-04-18",
-    spotleNumber: 1449,
+    spotleNumber: 1450,
     artist: "Steve Lacy",
     track: "Bad Habit",
-    image: "https://i.scdn.co/image/ab67616d0000b273b0db9b2fc4dc19c07f37d020",
-    soundcloudUrl: "https://soundcloud.com/stevelacy/bad-habit",
+    image: "https://i.scdn.co/image/ab67616d0000b2733d2dfa42f771cd458b194979",
+    soundcloudUrl: "https://soundcloud.com/steevlacy/bad-habit",
   },
   {
     isoDate: "2026-04-17",
-    spotleNumber: 1448,
+    spotleNumber: 1445,
     artist: "No Doubt",
     track: "Don't Speak",
-    image: "https://i.scdn.co/image/ab6761610000e5eb2c01915e0e5dc553f942f12e",
-    soundcloudUrl: "https://soundcloud.com/nodoubt/dont-speak-2",
+    image: "https://i.scdn.co/image/ab67616d0000b2736ebd5e789646a833b8f7d4ba",
+    soundcloudUrl: "https://soundcloud.com/nodoubt/dont-speak",
   },
   {
     isoDate: "2026-04-16",
-    spotleNumber: 1447,
+    spotleNumber: 1446,
     artist: "Young Thug",
     track: "Best Friend",
-    image: "https://i.scdn.co/image/ab6761610000e5ebad3b6e0c7f62c56e70b7c6ff",
-    soundcloudUrl: "https://soundcloud.com/youngthug/best-friend",
+    image: "https://i.scdn.co/image/ab67616d0000b273c4fee55d7b51479627c31f89",
+    soundcloudUrl: "https://soundcloud.com/youngthugworld/01-best-friend-dirty-116",
   },
   {
     isoDate: "2026-04-15",
-    spotleNumber: 1446,
+    spotleNumber: 1447,
     artist: "The Black Keys",
     track: "Lonely Boy",
-    image: "https://i.scdn.co/image/ab6761610000e5eb6c2b7e0e9d59bc38e5c4c3e0",
+    image: "https://i.scdn.co/image/ab67616d0000b2736a21b97de47168df4f0c1993",
     soundcloudUrl: "https://soundcloud.com/theblackkeys/lonely-boy-1",
   },
   {
     isoDate: "2026-04-14",
-    spotleNumber: 1445,
+    spotleNumber: 1448,
     artist: "Blondie",
     track: "Heart of Glass",
-    image: "https://i.scdn.co/image/ab6761610000e5eb02ae88c9e8e1d17b5e6a2a40",
-    soundcloudUrl: "https://soundcloud.com/blondie/heart-of-glass-2",
+    image: "https://i.scdn.co/image/ab67616d0000b27313cbe3e4dfa81fe5b91f2f1c",
+    soundcloudUrl: "https://soundcloud.com/blondie/heart-of-glass",
   },
   {
     isoDate: "2026-04-13",
-    spotleNumber: 1444,
+    spotleNumber: 1449,
     artist: "The Strokes",
     track: "Last Nite",
-    image: "https://i.scdn.co/image/ab6761610000e5ebc3b7a5ec45b1e5a50c7d93a6",
+    image: "https://i.scdn.co/image/ab67616d0000b2736d71f25763d9c83a80427883",
     soundcloudUrl: "https://soundcloud.com/thestrokes/last-nite-1",
   },
 ];
