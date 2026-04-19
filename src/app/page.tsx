@@ -758,6 +758,11 @@ export default function Home() {
                   </Button>
                 )}
               </div>
+              {!loading && data && (
+                <p className="mt-2 text-[11px] text-spotle-text-muted/60 text-center">
+                  Purple dates = available data
+                </p>
+              )}
             </motion.section>
           )}
 
@@ -838,8 +843,8 @@ export default function Home() {
                           <h3 className="text-base font-semibold text-white">
                             No data available for this date
                           </h3>
-                          <p className="text-sm text-spotle-text-muted">
-                            Try selecting a different date from the calendar.
+                          <p className="text-sm text-spotle-text-muted max-w-xs">
+                            spotle.io only provides data for the last ~8 days. Your personal archive grows as you visit daily. Dates with data are highlighted in purple on the calendar.
                           </p>
                           <Button
                             variant="outline"

@@ -3,6 +3,7 @@
 // using CORS proxy services to bypass cross-origin restrictions from spotle.io
 
 import { getArtistInfo, type ArtistInfo } from "./artists";
+import { SEED_ARCHIVE } from "./seed-archive";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -95,9 +96,33 @@ interface ArchiveEntry {
   soundcloudUrl: string;
 }
 
+/** Seed localStorage with bundled historical data on first visit */
+function seedArchiveIfNeeded(): void {
+  try {
+    if (typeof window === "undefined") return;
+    if (localStorage.getItem(ARCHIVE_KEY)) return; // Already has data
+    if (SEED_ARCHIVE.length === 0) return;
+
+    const entries: ArchiveEntry[] = SEED_ARCHIVE.map((s) => ({
+      isoDate: s.isoDate,
+      spotleNumber: s.spotleNumber,
+      artist: s.artist,
+      track: s.track,
+      image: s.image,
+      soundcloudUrl: s.soundcloudUrl,
+    }));
+    localStorage.setItem(ARCHIVE_KEY, JSON.stringify(entries));
+  } catch {
+    // Silently fail
+  }
+}
+
 function loadArchive(): Map<string, ArchiveEntry> {
   try {
     if (typeof window !== "undefined") {
+      // Seed on first visit
+      seedArchiveIfNeeded();
+
       const raw = localStorage.getItem(ARCHIVE_KEY);
       if (raw) {
         const data: ArchiveEntry[] = JSON.parse(raw);
